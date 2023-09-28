@@ -1,0 +1,136 @@
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    width: 50rem;
+    height: 30rem;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+#menu {
+    background-color: rgb(247, 247, 247);
+    width: 20rem;
+    padding: 20px;
+    border-right: 1px solid rgb(199, 199, 199);
+}
+
+#title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu {
+    background-color: rgb(17, 112, 255);
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    min-height: 20px;
+}
+
+.notification {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.active {
+    background-color: rgb(255, 153, 0);
+}
+
+.menu:hover {
+    opacity:0.8;
+}
+
+#content {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-title {
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#chat {
+    overflow: scroll;
+    padding-bottom: 10px;
+    flex: 1;
+}
+
+.other-message-container {
+    text-align: left;
+}
+
+.other-message {
+    text-align: left;
+    padding: 10px;
+    border-radius: 0px 10px 10px 10px;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.my-message-container {
+    text-align: right;
+}
+
+.my-message {
+    text-align: right;
+    padding: 10px;
+    border-radius: 10px 0px 10px 10px;
+    background-color: rgb(23, 40, 65);
+    color: white;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#chat-footer {
+    text-align: center;
+}
+
+#chat-footer > input {
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 5px;
+    width: 70%;
+}
+
+#chat-footer > button {
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: rgb(23, 40, 65);
+    color: white;
+    cursor: pointer;
+}
+
+#chat-footer > button:hover {
+    opacity:0.8;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+   
+ 

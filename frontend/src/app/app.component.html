@@ -1,0 +1,31 @@
+<main>
+  <div id="container">
+    <div id="menu">
+      <div id="title">Real Time Chat</div>
+      <div class="menu" [ngClass]="{'active': activeRoom === 'room1'}" (click)="changeRoom('room1')">
+        <span>Sala 1</span>
+        <span *ngIf="room1Notifications>0" class="notification">{{ room1Notifications }}</span>
+      </div>
+      <div class="menu" [ngClass]="{'active': activeRoom === 'room2'}" (click)="changeRoom('room2')">
+        <span>Sala 2</span>
+        <span *ngIf="room2Notifications>0" class="notification">{{ room2Notifications }}</span>
+      </div>
+      <div class="menu" [ngClass]="{'active': activeRoom === 'admin'}" (click)="changeRoom('admin')">
+        <span>Admin</span>
+        <span *ngIf="adminNotifications>0" class="notification">{{ adminNotifications }}</span>
+      </div>
+    </div>
+    <div id="content">
+      <div id="chat-title">{{ roomTitle }}</div>
+      <div id="chat">
+        <div *ngFor="let message of currentChat" [ngClass]="{'my-message-container': message.type == 0, 'other-message-container': message.type == 1}">
+          <div [ngClass]="{'my-message': message.type == 0, 'other-message': message.type == 1}">{{ message.value }}</div>
+        </div>
+      </div>
+      <div id="chat-footer">
+        <input type="text" placeholder="escreva algo..." [(ngModel)]="currentMessage"  (keyup.enter)="sendMessage()"/>
+        <button (click)="sendMessage()">enviar</button>
+      </div>
+    </div>
+  </div>
+</main>
