@@ -68,6 +68,12 @@ export class AppComponent {
 
         if (this.activeRoom != this.groups.admin)
           this.adminNotifications++;
+
+        if (this.activeRoom != this.groups.room1)
+          this.room1Notifications++;
+
+        if (this.activeRoom != this.groups.room2)
+          this.room2Notifications++;
       }
     });
   }
@@ -82,7 +88,15 @@ export class AppComponent {
     }
     
     if (this.activeRoom == this.groups.admin) {
+      this.room1Chat.push({ type: MessageType.MyMessage, value: this.currentMessage });
+      this.room2Chat.push({ type: MessageType.MyMessage, value: this.currentMessage });
       this.adminChat.push({ type: MessageType.MyMessage, value: this.currentMessage });
+
+      if (this.activeRoom != this.groups.room1)
+        this.room1Notifications++;
+
+      if (this.activeRoom != this.groups.room2)
+        this.room2Notifications++;
     }
 
     this.hubConnection.invoke("SendMessage", this.activeRoom, this.currentMessage);

@@ -1,0 +1,11 @@
+docker exec -it real-time-chat-broker1-1 /bin/bash
+
+kafka-topics --create \
+  --bootstrap-server broker1:9092,broker2:9092,broker3:9092 \
+  --replication-factor 3 \
+  --partitions 3 \
+  --topic admin
+
+
+kafka-topics --list --bootstrap-server broker1:9092
+kafka-topics --describe --topic room1 --bootstrap-server broker3:9092
